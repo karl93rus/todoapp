@@ -8,7 +8,10 @@ const newContentInput = document.getElementById("newContentInput");
 const newSaveBtn = document.getElementById("newSave");
 const createBtn = document.getElementById("createBtn");
 const taskList = document.getElementById("tasks");
-const itemContent = document.getElementById("item-content");
+const itemContent = document.getElementById("itcont");
+
+// Array for storing all
+let taskContentArray = [];
 
 // Functions section
 
@@ -16,6 +19,24 @@ function TaskObj(head, cont) {
 // Task object template
     this.header = head,
     this.content = cont;
+}
+
+function taskItemShow(event) {
+    let item = event.target;
+    let kids = taskList.children;
+    for(let i = 0; i < kids.length; i++) {
+        kids[i].className = "task-item";
+    }
+    item.className = "task-item-selected";
+    for(let i = 0; i < taskContentArray.length; i++) {
+        if(taskContentArray[i].header === item.textContent) {
+            itemContent.textContent = taskContentArray[i].content;
+            console.log(taskContentArray[i].header);
+            console.log(taskContentArray[i].content);
+            return;
+        }
+    }
+    
 }
 
 // Events section
@@ -46,7 +67,11 @@ newSaveBtn.addEventListener("click", () => {
     let newTaskItem = document.createElement("li");
     newTaskItem.className = "task-item";
     newTaskItem.textContent = taskObj.header;
+    taskContentArray.push(taskObj);
     
     taskList.appendChild(newTaskItem);
     modalWindow.className = "modal";
 });
+
+// Task items event to hightlight and show content details
+taskList.addEventListener("click", taskItemShow);

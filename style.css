@@ -95,6 +95,13 @@ html, body {
     cursor: pointer;
 }
 
+.task-item-selected {
+    height: 25px;
+    line-height: 25px;
+    padding-left: 25px;
+    background-color: #ffc615;
+}
+
 /* ----------------------------- RIGHT SIDE ---------------------*/
 
 .task-details {
