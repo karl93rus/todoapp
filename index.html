@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ToDo app</title>
+    <link rel="stylesheet" type="text/css" href="style.css" >
+</head>
+<body>
+    <div class="wrapper">
+        <div class="modal">
+            <div class="new-task">
+                <p>Create new task</p>
+                <div class="new-task-header">
+                    <form>
+                        Header:
+                        <input type="text" size="92">
+                    </form>
+                </div> <!-- new-task-header -->
+                <div class="new-task-content">
+                    <form>
+                        <textarea rows="12" cols="79" placeholder="New content here...">
+                            
+                        </textarea>
+                    </form>
+                </div> <!-- new-task-content -->
+                <div class="new-task-controls">
+                    <p class="new-task-btns">SAVE</p>
+                    <p class="new-task-btns">CLEAR</p>
+                    <p class="new-task-btns" id="modalClose">CLOSE WITHOUT SAVING</p>
+                </div> <!-- new-task-controls -->
+            </div> <!-- new-task -->
+        </div> <!-- modal -->
+        <div class="header">
+            ToDo list application
+        </div> <!-- header -->
+        <div class="main-window-grid">
+            <div class="left-side">
+                <div class="task-manager">
+                    <p>Task manager</p>
+                    <div class="task-controls">
+                        <p class="controls-btns" id="createBtn">CREATE</p>
+                        <form class="controls-search">
+                            <input type="text" placeholder="Search..." size="30">
+                        </form>
+                    </div> <!-- task-controls -->
+                    <div class="task-list">
+                        <ul>
+                            <li class="task-item">
+                                task name
+                            </li>
+                        </ul>
+                    </div> <!-- task-list -->
+                </div> <!-- task-manager -->
+            </div> <!-- left-side -->
+            <div class="right-side">
+                <div class="task-details">
+                        <p>Task details</p>
+                        <div class="details-controls">
+                            <p class="details-btns" id="delBtn">DELETE</p>
+                            <p class="details-btns" id="editBtn">EDIT</p>
+                        </div> <!-- details-controls -->
+                        <div class="details-content">
+
+                        </div> <!-- details-content -->
+                </div> <!-- task-details -->
+            </div> <!-- right-side -->
+        </div> <!-- main-window-gri -->
+        <div class="footer">
+
+        </div> <!-- footer -->
+    </div> <!-- wrapper -->
+
+    <script src="js/main.js"></script>
+</body>
+</html>
