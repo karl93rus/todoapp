@@ -23,7 +23,7 @@
                     </form>
                 </div> <!-- new-task-content -->
                 <div class="new-task-controls">
-                    <p class="new-task-btns">SAVE</p>
+                    <p class="new-task-btns" id="newSave">SAVE</p>
                     <p class="new-task-btns" id="modalClear">CLEAR</p>
                     <p class="new-task-btns" id="modalClose">CLOSE WITHOUT SAVING</p>
                 </div> <!-- new-task-controls -->
@@ -43,10 +43,10 @@
                         </form>
                     </div> <!-- task-controls -->
                     <div class="task-list">
-                        <ul>
-                            <li class="task-item">
+                        <ul id="tasks">
+                            <!-- <li class="task-item">
                                 task name
-                            </li>
+                            </li> -->
                         </ul>
                     </div> <!-- task-list -->
                 </div> <!-- task-manager -->
@@ -59,7 +59,7 @@
                             <p class="details-btns" id="editBtn">EDIT</p>
                         </div> <!-- details-controls -->
                         <div class="details-content">
-
+                            <p class="item-content">content</p>
                         </div> <!-- details-content -->
                 </div> <!-- task-details -->
             </div> <!-- right-side -->
