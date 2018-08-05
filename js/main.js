@@ -10,6 +10,14 @@ const createBtn = document.getElementById("createBtn");
 const taskList = document.getElementById("tasks");
 const itemContent = document.getElementById("item-content");
 
+// Functions section
+
+function TaskObj(head, cont) {
+// Task object template
+    this.header = head,
+    this.content = cont;
+}
+
 // Events section
 
 createBtn.addEventListener("click", () => {
@@ -33,9 +41,12 @@ modalClearBtn.addEventListener("click", () => {
 newSaveBtn.addEventListener("click", () => {
 //Saves and adds new task to the list
     let newTaskHeader = newHeaderInput.value;
+    let newTaskContent = newContentInput.value;
+    let taskObj = new TaskObj(newTaskHeader, newTaskContent);
     let newTaskItem = document.createElement("li");
-    newTaskItem.textContent = newTaskHeader;
     newTaskItem.className = "task-item";
+    newTaskItem.textContent = taskObj.header;
+    
     taskList.appendChild(newTaskItem);
     modalWindow.className = "modal";
 });
