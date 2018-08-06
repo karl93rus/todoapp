@@ -7,10 +7,11 @@ const newHeaderInput = document.getElementById("newHeaderInput");
 const newContentInput = document.getElementById("newContentInput");
 const newSaveBtn = document.getElementById("newSave");
 const createBtn = document.getElementById("createBtn");
+const deleteBtn = document.getElementById("delBtn");
 const taskList = document.getElementById("tasks");
 const itemContent = document.getElementById("itcont");
 
-// Array for storing all
+// Array for storing all tasks
 let taskContentArray = [];
 
 // ------------------------------------------- Functions section
@@ -34,8 +35,6 @@ function taskItemShow(event) {
     for(let i = 0; i < taskContentArray.length; i++) {
         if(taskContentArray[i].header === item.textContent) {
             itemContent.textContent = taskContentArray[i].content;
-            console.log(taskContentArray[i].header);
-            console.log(taskContentArray[i].content);
             return;
         }
     }
@@ -73,6 +72,17 @@ newSaveBtn.addEventListener("click", () => {
     
     taskList.appendChild(newTaskItem);
     modalWindow.className = "modal";
+});
+
+deleteBtn.addEventListener("click", () => {
+// Removes item from the list AND form array to free memory
+    for(let i = 0; i < taskContentArray.length; i++) {
+        if(taskContentArray[i].header === taskList.getElementsByClassName("task-item-selected")[0].textContent) {
+            taskContentArray.splice(i, 1);
+        }
+    }
+    taskList.removeChild(taskList.getElementsByClassName("task-item-selected")[0]);
+    itemContent.textContent = "";
 });
 
 // Task items event to hightlight and show content details
