@@ -1,4 +1,4 @@
-// Variables section
+// ------------------------------------------- Variables section
 
 const modalWindow = document.getElementsByClassName("modal")[0];
 const modalCloseBtn = document.getElementById("modalClose");
@@ -13,7 +13,7 @@ const itemContent = document.getElementById("itcont");
 // Array for storing all
 let taskContentArray = [];
 
-// Functions section
+// ------------------------------------------- Functions section
 
 function TaskObj(head, cont) {
 // Task object template
@@ -24,10 +24,13 @@ function TaskObj(head, cont) {
 function taskItemShow(event) {
     let item = event.target;
     let kids = taskList.children;
+
     for(let i = 0; i < kids.length; i++) {
         kids[i].className = "task-item";
     }
+
     item.className = "task-item-selected";
+
     for(let i = 0; i < taskContentArray.length; i++) {
         if(taskContentArray[i].header === item.textContent) {
             itemContent.textContent = taskContentArray[i].content;
@@ -36,10 +39,9 @@ function taskItemShow(event) {
             return;
         }
     }
-    
 }
 
-// Events section
+// ------------------------------------------- Events section
 
 createBtn.addEventListener("click", () => {
 // Reveal moadal window by CREATE btn click
