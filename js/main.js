@@ -82,6 +82,11 @@ newSaveBtn.addEventListener("click", () => {
 
 deleteBtn.addEventListener("click", () => {
 // Removes item from the list AND form array to free memory
+    if(taskContentArray.length == 0) {
+        alert("Nothing to delete");
+        return;
+    }
+    
     for(let i = 0; i < taskContentArray.length; i++) {
         if(taskContentArray[i].header === taskList.getElementsByClassName("task-item-selected")[0].textContent) {
             taskContentArray.splice(i, 1);
