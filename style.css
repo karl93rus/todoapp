@@ -100,6 +100,7 @@ html, body {
     line-height: 25px;
     padding-left: 25px;
     background-color: #ffc615;
+    cursor: pointer;
 }
 
 /* ----------------------------- RIGHT SIDE ---------------------*/

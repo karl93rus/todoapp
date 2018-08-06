@@ -67,9 +67,15 @@ newSaveBtn.addEventListener("click", () => {
     let taskObj = new TaskObj(newTaskHeader, newTaskContent);
     let newTaskItem = document.createElement("li");
     newTaskItem.className = "task-item";
+
+    if(newTaskHeader.length > 55) {
+    // Check if task header length is more than 55 letters
+        alert("Header must be 55 characters or less!")
+        return;
+    }
+
     newTaskItem.textContent = taskObj.header;
     taskContentArray.push(taskObj);
-    
     taskList.appendChild(newTaskItem);
     modalWindow.className = "modal";
 });
@@ -81,6 +87,7 @@ deleteBtn.addEventListener("click", () => {
             taskContentArray.splice(i, 1);
         }
     }
+
     taskList.removeChild(taskList.getElementsByClassName("task-item-selected")[0]);
     itemContent.textContent = "";
 });
