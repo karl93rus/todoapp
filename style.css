@@ -231,3 +231,96 @@ textarea {
     background-color: #ffc615;
     cursor: pointer;
 }
+
+/*--------------------------    EDIT WINDOW    ----------------------*/
+
+.edit {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.editRev {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.edit-window {
+    position: absolute;
+    width: 40%;
+    height: 400px;
+    margin: 0;
+    top: 20%;
+    left: 30%;
+    padding: 0;
+    background-color: #fff;
+}
+
+.edit-window > p {
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: var(--main-color);
+}
+
+.edit-task-text {
+    position: absolute;
+    left: 5%;
+    top: 15%;
+    margin: auto;
+    width: 90%;
+    height: 280px;
+}
+
+.edit-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 55px;
+    width: 100%;
+}
+
+.edit-btns {
+    float: left;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    height: 30px;
+    width: 100px;
+    margin-right: 80px;
+    margin-left: 80px;
+    margin-top: 12px;
+    line-height: 30px;
+    transition: background-color 0.4s;
+}
+
+.edit-btns:hover {
+    background-color: #ffc615;
+    cursor: pointer;
+}
+
+.edit-btns-inactive {
+    float: left;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    height: 30px;
+    width: 100px;
+    margin-right: 80px;
+    margin-left: 80px;
+    margin-top: 12px;
+    line-height: 30px;
+    visibility: hidden;
+}
