@@ -127,7 +127,7 @@ editBtn.addEventListener("click", () => {
 
         for(let i = 0; i < taskContentArray.length; i++) {
             if(taskContentArray[i].header === selectedItem.textContent) {
-                editTextArea.textContent = taskContentArray[i].content;
+                editTextArea.value = taskContentArray[i].content;
                 currentTaskObj = taskContentArray[i];
                 return;
             }
